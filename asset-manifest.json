@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/martepeluk/achordio/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/martepeluk/achordio/static/js/main.76644be9.chunk.js",
+    "main.js.map": "/martepeluk/achordio/static/js/main.76644be9.chunk.js.map",
+    "runtime-main.js": "/martepeluk/achordio/static/js/runtime-main.90d0e9d1.js",
+    "runtime-main.js.map": "/martepeluk/achordio/static/js/runtime-main.90d0e9d1.js.map",
+    "static/js/2.96356fd6.chunk.js": "/martepeluk/achordio/static/js/2.96356fd6.chunk.js",
+    "static/js/2.96356fd6.chunk.js.map": "/martepeluk/achordio/static/js/2.96356fd6.chunk.js.map",
+    "static/js/3.00ad6e84.chunk.js": "/martepeluk/achordio/static/js/3.00ad6e84.chunk.js",
+    "static/js/3.00ad6e84.chunk.js.map": "/martepeluk/achordio/static/js/3.00ad6e84.chunk.js.map",
+    "index.html": "/martepeluk/achordio/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/martepeluk/achordio/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.96356fd6.chunk.js.LICENSE.txt": "/martepeluk/achordio/static/js/2.96356fd6.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/martepeluk/achordio/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.90d0e9d1.js",
+    "static/js/2.96356fd6.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.76644be9.chunk.js"
+  ]
+}
