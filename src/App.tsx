@@ -32,30 +32,34 @@ const noteStringToValue: Record<string, number> = {
   'H': 11
 }
 
-class App extends React.Component<{}, {notes: string[], sharp: number}> {
+class App extends React.Component<{}, {baseNote: number, sharp: number}> {
   constructor(props: any) {
     super(props);
     this.state = {
-      notes: [],
+      baseNote: -1,
       sharp: 0
     };
     this.onChangeNote = this.onChangeNote.bind(this);
     this.onChangeSharp = this.onChangeSharp.bind(this);
+    this.calculateChordFromBaseNote = this.calculateChordFromBaseNote.bind(this);
   }
 
   onChangeNote(event: any) {
     var noteValue: number = +event.target.value;
-    let noteList: string[] = this.calculateChordFromBaseNote(noteValue);
-    this.setState({notes : noteList, sharp : this.state.sharp});
+    this.setState({baseNote : noteValue, sharp : this.state.sharp});
   }
 
   onChangeSharp(event: any) {
     var sharpValue: number = +event.target.value;
-    let noteList: string[] = this.calculateChordFromBaseNote(noteStringToValue[this.state.notes[0]] + sharpValue);
-    this.setState({notes : noteList, sharp : this.state.sharp});
+    this.setState({baseNote : this.state.baseNote, sharp : sharpValue});
   }
 
-  calculateChordFromBaseNote(baseNote: number): string[] {
+  calculateChordFromBaseNote(): string[] {
+    if (this.state.baseNote < 0) {
+      return [];
+    }
+    var baseNote: number = (this.state.baseNote + this.state.sharp + 12) % 12;
+
     var noteStringList: string[] = [noteValueToString[baseNote % 12], noteValueToString[(baseNote + 4) % 12], noteValueToString[(baseNote + 7) % 12], noteValueToString[(baseNote + 11) % 12]];
     return noteStringList;
   }
@@ -79,7 +83,7 @@ class App extends React.Component<{}, {notes: string[], sharp: number}> {
           <input type="radio" value="-1" name="sharp" /> b
         </div>
 
-        <Chord notes={this.state.notes}/>
+        <Chord notes={this.calculateChordFromBaseNote()}/>
       </div>
     );
   }
