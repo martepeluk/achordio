@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Chord from './chords/chord';
 
 const noteValues: Record<number, string> = {
   0: 'C',
@@ -16,9 +17,14 @@ const noteValues: Record<number, string> = {
   11: 'H'
 }
 
-class App extends React.Component {
-
-  
+class App extends React.Component<{}, {notes: string[]}> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      notes: []
+    };
+    this.onChangeNote = this.onChangeNote.bind(this);
+  }
 
   onChangeNote(event: any) {
     var noteValue: number = +event.target.value;
@@ -26,6 +32,8 @@ class App extends React.Component {
     console.log(noteValues[(noteValue + 4) % 12]);
     console.log(noteValues[(noteValue + 7) % 12]);
     console.log(noteValues[(noteValue + 11) % 12]);
+    var noteList : any = [noteValues[noteValue], noteValues[(noteValue + 4) % 12], noteValues[(noteValue + 7) % 12], noteValues[(noteValue + 11) % 12]]
+    this.setState({notes : noteList});
   }
 
   render() {
@@ -40,6 +48,8 @@ class App extends React.Component {
           <input type="radio" value="9" name="note" /> A
           <input type="radio" value="11" name="note" /> H
         </div>
+
+        <Chord notes={this.state.notes}/>
       </div>
     );
   }
