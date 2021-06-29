@@ -33,17 +33,19 @@ const noteStringToValue: Record<string, number> = {
 }
 
 // third = 0 is a major third
-class App extends React.Component<{}, {baseNote: number, sharp: number, third: number}> {
+class App extends React.Component<{}, {baseNote: number, sharp: number, third: number, seventh: number}> {
   constructor(props: any) {
     super(props);
     this.state = {
-      baseNote: -1,
+      baseNote: 0,
       sharp: 0,
-      third: 0
+      third: 0,
+      seventh: 0
     };
     this.onChangeNote = this.onChangeNote.bind(this);
     this.onChangeSharp = this.onChangeSharp.bind(this);
     this.onChangeThird = this.onChangeThird.bind(this);
+    this.onChangeSeventh = this.onChangeSeventh.bind(this);
     this.calculateChordFromBaseNote = this.calculateChordFromBaseNote.bind(this);
   }
 
@@ -68,6 +70,13 @@ class App extends React.Component<{}, {baseNote: number, sharp: number, third: n
     this.setState(curState);
   }
 
+  onChangeSeventh(event: any) {
+    var seventhValue: number = +event.target.value;
+    var curState = {...this.state}
+    curState.seventh = seventhValue
+    this.setState(curState);
+  }
+
   calculateChordFromBaseNote(): string[] {
     if (this.state.baseNote < 0) {
       return [];
@@ -77,7 +86,7 @@ class App extends React.Component<{}, {baseNote: number, sharp: number, third: n
     var noteStringList: string[] = [noteValueToString[baseNote % 12],
      noteValueToString[(baseNote + 4 + this.state.third) % 12],
       noteValueToString[(baseNote + 7) % 12],
-       noteValueToString[(baseNote + 11) % 12]];
+       noteValueToString[(baseNote + 11 + this.state.seventh) % 12]];
     return noteStringList;
   }
 
@@ -85,7 +94,7 @@ class App extends React.Component<{}, {baseNote: number, sharp: number, third: n
     return (
       <div className="App">
         <div onChange={this.onChangeNote}>
-          <input type="radio" value="0" name="note" /> C
+          <input type="radio" value="0" name="note" defaultChecked/> C
           <input type="radio" value="2" name="note" /> D
           <input type="radio" value="4" name="note" /> E
           <input type="radio" value="5" name="note" /> F
@@ -96,13 +105,18 @@ class App extends React.Component<{}, {baseNote: number, sharp: number, third: n
 
         <div onChange={this.onChangeSharp}>
           <input type="radio" value="1" name="sharp" /> #
-          <input type="radio" value="0" name="sharp" /> none
+          <input type="radio" value="0" name="sharp" defaultChecked/> none
           <input type="radio" value="-1" name="sharp" /> b
         </div>
 
         <div onChange={this.onChangeThird}>
-          <input type="radio" value="-1" name="third" /> minor
-          <input type="radio" value="0" name="third" /> major
+          <input type="radio" value="-1" name="third" /> minor3
+          <input type="radio" value="0" name="third" defaultChecked/> major3
+        </div>
+
+        <div onChange={this.onChangeSeventh}>
+          <input type="radio" value="-1" name="seventh" defaultChecked/> minor7
+          <input type="radio" value="0" name="seventh"/> major7
         </div>
 
         <Chord notes={this.calculateChordFromBaseNote()}/>
