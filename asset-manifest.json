@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/achordio/static/css/main.bfac5412.chunk.css",
-    "main.js": "/achordio/static/js/main.50fe5111.chunk.js",
-    "main.js.map": "/achordio/static/js/main.50fe5111.chunk.js.map",
-    "runtime-main.js": "/achordio/static/js/runtime-main.3d5a517d.js",
-    "runtime-main.js.map": "/achordio/static/js/runtime-main.3d5a517d.js.map",
-    "static/js/2.9c830f5f.chunk.js": "/achordio/static/js/2.9c830f5f.chunk.js",
-    "static/js/2.9c830f5f.chunk.js.map": "/achordio/static/js/2.9c830f5f.chunk.js.map",
-    "static/js/3.fb3c66fa.chunk.js": "/achordio/static/js/3.fb3c66fa.chunk.js",
-    "static/js/3.fb3c66fa.chunk.js.map": "/achordio/static/js/3.fb3c66fa.chunk.js.map",
+    "main.js": "/achordio/static/js/main.cb8ca611.chunk.js",
+    "main.js.map": "/achordio/static/js/main.cb8ca611.chunk.js.map",
+    "runtime-main.js": "/achordio/static/js/runtime-main.37f84e65.js",
+    "runtime-main.js.map": "/achordio/static/js/runtime-main.37f84e65.js.map",
+    "static/js/2.51f03ff7.chunk.js": "/achordio/static/js/2.51f03ff7.chunk.js",
+    "static/js/2.51f03ff7.chunk.js.map": "/achordio/static/js/2.51f03ff7.chunk.js.map",
+    "static/js/3.d88ef6a2.chunk.js": "/achordio/static/js/3.d88ef6a2.chunk.js",
+    "static/js/3.d88ef6a2.chunk.js.map": "/achordio/static/js/3.d88ef6a2.chunk.js.map",
     "index.html": "/achordio/index.html",
     "static/css/main.bfac5412.chunk.css.map": "/achordio/static/css/main.bfac5412.chunk.css.map",
-    "static/js/2.9c830f5f.chunk.js.LICENSE.txt": "/achordio/static/js/2.9c830f5f.chunk.js.LICENSE.txt"
+    "static/js/2.51f03ff7.chunk.js.LICENSE.txt": "/achordio/static/js/2.51f03ff7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3d5a517d.js",
-    "static/js/2.9c830f5f.chunk.js",
+    "static/js/runtime-main.37f84e65.js",
+    "static/js/2.51f03ff7.chunk.js",
     "static/css/main.bfac5412.chunk.css",
-    "static/js/main.50fe5111.chunk.js"
+    "static/js/main.cb8ca611.chunk.js"
   ]
 }
