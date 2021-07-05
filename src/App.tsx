@@ -40,7 +40,7 @@ class App extends React.Component<{}, {baseNote: number, sharp: number, third: n
       baseNote: 0,
       sharp: 0,
       third: 0,
-      seventh: 0
+      seventh: -1
     };
     this.onChangeNote = this.onChangeNote.bind(this);
     this.onChangeSharp = this.onChangeSharp.bind(this);
