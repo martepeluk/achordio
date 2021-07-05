@@ -14,22 +14,22 @@ const noteValueToString: Record<number, string> = {
   8: 'G#',
   9: 'A',
   10: 'A#',
-  11: 'H'
+  11: 'B'
 }
 
-const noteStringToValue: Record<string, number> = {
-  'C': 0,
-  'C#': 1,
-  'D': 2,
-  'D#': 3,
-  'E': 4,
-  'F': 5,
-  'F#': 6,
-  'G': 7,
-  'G#': 8,
-  'A': 9,
-  'A#': 10,
-  'H': 11
+const flatNoteValue: Record<number, string> = {
+  0: 'C',
+  1: 'Db',
+  2: 'D',
+  3: 'Eb',
+  4: 'E',
+  5: 'F',
+  6: 'Gb',
+  7: 'G',
+  8: 'Ab',
+  9: 'A',
+  10: 'Bb',
+  11: 'B'
 }
 
 // third = 0 is a major third
@@ -83,11 +83,21 @@ class App extends React.Component<{}, {baseNote: number, sharp: number, third: n
     }
     var baseNote: number = (this.state.baseNote + this.state.sharp + 12) % 12;
 
-    var noteStringList: string[] = [noteValueToString[baseNote % 12],
-     noteValueToString[(baseNote + 4 + this.state.third) % 12],
-      noteValueToString[(baseNote + 7) % 12],
-       noteValueToString[(baseNote + 11 + this.state.seventh) % 12]];
+    let prime : string = this.calculateNoteFromBaseNoteAndDiff(baseNote, 0)
+    let third : string = this.calculateNoteFromBaseNoteAndDiff(baseNote + 4, this.state.third)
+    let fifth : string = this.calculateNoteFromBaseNoteAndDiff(baseNote + 7, 0)
+    let seventh : string = this.calculateNoteFromBaseNoteAndDiff(baseNote + 11, this.state.seventh)
+
+    var noteStringList: string[] = [prime, third, fifth, seventh];
     return noteStringList;
+  }
+
+  calculateNoteFromBaseNoteAndDiff(baseNote: number, diff: number) : string {
+    if (diff < 0) {
+      return flatNoteValue[(baseNote + diff + 12) % 12]
+    } else {
+      return noteValueToString[(baseNote + diff + 12) % 12]
+    }
   }
 
   render() {
