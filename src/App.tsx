@@ -93,10 +93,15 @@ class App extends React.Component<{}, {baseNote: number, sharp: number, third: n
   }
 
   calculateNoteFromBaseNoteAndDiff(baseNote: number, diff: number) : string {
-    if (diff < 0) {
-      return flatNoteValue[(baseNote + diff + 12) % 12]
-    } else {
+    if (this.state.sharp >= 0) 
+    {
       return noteValueToString[(baseNote + diff + 12) % 12]
+    } else {
+      if (diff < 0) {
+        return flatNoteValue[(baseNote + diff + 12) % 12]
+      } else {
+        return noteValueToString[(baseNote + diff + 12) % 12]
+      }
     }
   }
 
@@ -115,8 +120,8 @@ class App extends React.Component<{}, {baseNote: number, sharp: number, third: n
 
         <div onChange={this.onChangeSharp}>
           <input type="radio" value="1" name="sharp" /> #
-          <input type="radio" value="0" name="sharp" defaultChecked/> none
-          <input type="radio" value="-1" name="sharp" /> b
+          <input type="radio" value="0" name="sharp" defaultChecked/> &#9838;
+          <input type="radio" value="-1" name="sharp" /> &#9837;
         </div>
 
         <div onChange={this.onChangeThird}>
