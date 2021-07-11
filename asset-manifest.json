@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/achordio/static/css/main.bfac5412.chunk.css",
-    "main.js": "/achordio/static/js/main.cb8ca611.chunk.js",
-    "main.js.map": "/achordio/static/js/main.cb8ca611.chunk.js.map",
+    "main.js": "/achordio/static/js/main.0c6d1226.chunk.js",
+    "main.js.map": "/achordio/static/js/main.0c6d1226.chunk.js.map",
     "runtime-main.js": "/achordio/static/js/runtime-main.37f84e65.js",
     "runtime-main.js.map": "/achordio/static/js/runtime-main.37f84e65.js.map",
     "static/js/2.51f03ff7.chunk.js": "/achordio/static/js/2.51f03ff7.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.37f84e65.js",
     "static/js/2.51f03ff7.chunk.js",
     "static/css/main.bfac5412.chunk.css",
-    "static/js/main.cb8ca611.chunk.js"
+    "static/js/main.0c6d1226.chunk.js"
   ]
 }
